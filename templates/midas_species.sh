@@ -5,7 +5,7 @@ set -euo pipefail
 # Decompress the reference database
 mkdir DB/
 echo "\$(date) Decompressing ${db} to DB/"
-tar -xzvf "${db}" -C DB/
+gunzip -c "${db}" | tar -xvf - -C DB/
 
 # Run the MIDAS command
 # Output to the current working directory
