@@ -10,7 +10,7 @@ gunzip -c "${db}" | tar -xvf - -C DB/
 # Run the MIDAS command
 # Output to the current working directory
 echo "\$(date) Running MIDAS"
-run_midas.py genes \
+midas run_genes \
     ./ \
     -1 "${fastq_1}" \
     -2 "${fastq_2}" \
