@@ -2,11 +2,6 @@
 
 set -euo pipefail
 
-# Decompress the reference database
-mkdir DB/
-echo "\$(date) Decompressing ${db} to DB/"
-gunzip -c "${db}" | tar -xvf - -C DB/
-
 # Run the MIDAS command
 # Output to the current working directory
 echo "\$(date) Running MIDAS"
@@ -23,7 +18,3 @@ midas run_species \
 
 echo "\$(date) Done running MIDAS"
 ls -lahtr
-
-# Clean up the database directory so that those files are not saved
-echo "\$(date) Cleaning up temporary database folder"
-rm -r DB
