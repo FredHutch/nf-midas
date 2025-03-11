@@ -8,6 +8,7 @@ echo "\$(date) Running MIDAS"
 mkdir "${sample}"
 midas run_species \
     "${sample}" \
+    --debug \
     --sample_name "${sample}" \
     -1 "${fastq_1}" \
     -2 "${fastq_2}" \
